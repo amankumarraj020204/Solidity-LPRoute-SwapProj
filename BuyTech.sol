@@ -10,7 +10,7 @@ import "./IERC20.sol";
 interface IFactoryV2 {
     event PairCreated(address indexed token0, address indexed token1, address lpPair, uint);
     function getPair(address tokenA, address tokenB) external view returns (address lpPair);
-    function createPair(address tokenA, address tokenB) external returns (address lpPair);
+    function createPair(address tokenMain, address tokenB) external returns (address lpPair);
 }
 
 interface IV2Pair {
@@ -61,7 +61,7 @@ interface IRouter02 is IRouter01 {
         uint deadline
     ) external payable;
 }
-
+//Routing the trades
 interface PancakeSwapRouter
 {
     function WETH() external pure returns (address);
